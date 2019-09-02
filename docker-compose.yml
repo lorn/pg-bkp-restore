@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+   db:
+     image: postgres:9.6
+     environment:
+       POSTGRES_PASSWORD: example
+   db2:
+     image: postgres:9.6
+     environment:
+       POSTGRES_PASSWORD: example2
+       POSTGRES_DB: lorn
+   pg_copy:
+    depends_on:
+       - db
+       - db2
+    environment:
+      POSTGRES_DB_A_DSN: "postgresql://postgres:example@db:5432/postgres"
+      POSTGRES_DB_B_DSN: "postgresql://postgres:example2@db2:5432/lorn"
+    image: lorn/pg_copy:0.1
