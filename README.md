@@ -33,6 +33,11 @@ example:
 ```
  POSTGRES_DB_B_DSN: "postgresql://postgres:example@db:5432/lorn"
 ```
+
+## Options
+
+If you pass `--finish` the container will finish the execution after the copy, with an `exit 0` without `--finish` the container will be running forever
+
 # Test locally
 
 If you want to test the `pg_copy` locally, you can use `docker-compose`:

@@ -5,4 +5,4 @@ MAINTAINER Lindolfo Rodrigues <lorn @ github>
 ADD . /
 RUN rm /Dockerfile
 
-ENTRYPOINT ["/opt/pg_copy.sh"]
+#ENTRYPOINT ["/opt/pg_copy.sh"]
